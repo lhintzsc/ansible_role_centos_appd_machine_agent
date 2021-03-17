@@ -14,7 +14,7 @@
     
 - name: Download machine agent
   uri:
-    url: "{{ download_machine_agent_uri }}"
+    url: "{{ downlaod_agent_url }}"
     method: GET
     headers:
       Authorization: "Bearer {{ login.json.access_token }}"
