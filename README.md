@@ -37,3 +37,4 @@ Author Information
 
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
 # ansible_centos_appd_machine_agent
+# ansible_role_centos_appd_machine_agent
