@@ -1,6 +1,6 @@
 - name: Login to appdynamics
   uri:
-    url: https://identity.msrv.saas.appdynamics.com/v2.0/oauth/token
+    url: "https://identity.msrv.saas.appdynamics.com/v2.0/oauth/token"
     method: POST
     body_format: json
     body: '{"username": "{{ download_username }}","password": "{{ download_password }}","scopes": ["download"]}'
