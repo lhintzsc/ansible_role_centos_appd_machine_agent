@@ -2,6 +2,8 @@
 # directory and zip file
 appd_directory: "{{ appd_directory }}"
 agent_directory: "{{ appd_directory }}/machine_agent"
+download_username: "{{ download_username }}"
+download_password: "{{ download_password }}"
 #agent_zip: "{{ machine_agent_zip }}"
 #agent_name: "{{ agent_zip | basename | regex_replace('.zip')  }}"
 #unzip_directory: "{{ appd_directory }}/{{ agent_name }}"
