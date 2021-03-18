@@ -63,4 +63,3 @@
   file:
     state: absent
     path: "{{ appd_home_dir }}/{{ appd_agent_zip }}"
-  when: not agent_dir.stat.exists
