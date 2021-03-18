@@ -49,3 +49,5 @@ appd_analytics_enabled: "{{ appd_analytics_enabled }}"
 appd_event_custer_url: "{{ appd_event_custer_url }}"
 appd_event_custer_port: "{{ appd_event_custer_port }}"
 appd_event_custer_protocoll: "{{ appd_event_custer_protocoll }}"
+
+appd_java_home: "/usr/bin/"

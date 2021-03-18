@@ -13,7 +13,7 @@ Description=AppDynamics Machine Agent
 Type=simple
 
 Environment=MACHINE_AGENT_HOME={{ appd_agent_dir }}
-Environment=JAVA_HOME={{ appd_agent_dir }}/jre
+Environment=JAVA_HOME={{ appd_java_home }}
 
 # Specify agent system properties for systemd here by setting or editing JAVA_OPTS, e.g.,
 Environment="JAVA_OPTS=\
