@@ -1,0 +1,45 @@
+- name: "Copy SRC to DEST"
+  copy:
+  src: "{{ appd_agent_path }}"
+  dest: "{{ appd_agent_dir }}"  
+  owner: appd
+  group: appd
+  mode: '0644'
+# https://docs.ansible.com/ansible/latest/modules/copy_module.html 
+# https://chmodcommand.com/ 
+
+- name: "Create {{ appd_unzip_dir }} if it does not exist"
+  file:
+    path: '{{ appd_unzip_dir }}'
+    recurse: yes
+    owner: appd
+    group: appd
+    mode: '0774'
+    state: directory  # directory or file
+# https://docs.ansible.com/ansible/latest/modules/file_module.html
+# http://www.filepermissions.com/file-permissions-index
+
+- name: "Extract {{ appd_agent_zip }} into {{ appd_unzip_dir }}"
+  unarchive:
+    src: '{{ appd_agent_zip }}'
+    dest: '{{ appd_unzip_dir }}'
+# https://docs.ansible.com/ansible/latest/modules/unarchive_module.html
+
+- name: "Create symbolic {{ appd_agent_dir }} -> {{ appd_unzip_dir }}"
+  file:
+    src: '{{ unzip_directory }}'
+    dest: '{{ appd_unzip_dir }}'
+    owner: appd 
+    group: appd 
+    mode: '0774'
+    state: link
+# https://docs.ansible.com/ansible/latest/modules/file_module.html
+
+- name: "Recursively set owner appd and group appd of dir {{ appd_agent_dir }}"
+  file:
+    path: '{{ appd_agent_dir }}'
+    state: directory
+    recurse: yes
+    owner: appd
+    group: appd
+    mode: '0774'

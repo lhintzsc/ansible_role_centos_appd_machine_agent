@@ -18,9 +18,9 @@
     append: yes
 # https://docs.ansible.com/ansible/latest/modules/user_module.html
 
-- name: "Create {{ appd_directory }} if it does not exist"
+- name: "Create {{ appd_home_dir }} if it does not exist"
   file:
-    path: "{{ appd_directory }}"
+    path: "{{ appd_home_dir }}"
     recurse: yes
     owner: appd
     group: appd
@@ -29,9 +29,9 @@
 # https://docs.ansible.com/ansible/latest/modules/file_module.html
 # http://www.filepermissions.com/file-permissions-index
 
-- name: "Create {{ agent_directory }} if it does not exist"
+- name: "Create {{ appd_agent_dir }} if it does not exist"
   file:
-    path: "{{ agent_directory }}"
+    path: "{{ appd_agent_dir }}"
     recurse: yes
     owner: appd
     group: appd

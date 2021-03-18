@@ -1,12 +1,15 @@
 ---
 # directory and zip file
-appd_directory: "{{ appd_directory }}"
-agent_directory: "{{ appd_directory }}/machine_agent"
-download_username: "{{ download_username }}"
-download_password: "{{ download_password }}"
+appd_home_dir: "{{ appd_home_dir }}"
+appd_agent_dir: "{{ appd_home_dir }}/machine_agent"
+appd_agent_name: "{{ appd_agent_name }}"
+appd_agent_path: "{{ appd_agent_path }}"
+appd_agent_zip: "{{ appd_agent_zip }}"
+appd_unzip_dir: "{{ appd_home_dir }}/{{ appd_agent_name }}"
+
 #agent_zip: "{{ machine_agent_zip }}"
 #agent_name: "{{ agent_zip | basename | regex_replace('.zip')  }}"
-#unzip_directory: "{{ appd_directory }}/{{ agent_name }}"
+
 
 # configuration files
 #appd_controller_info: '{{ agent_directory }}/conf/controller-info.xml'
