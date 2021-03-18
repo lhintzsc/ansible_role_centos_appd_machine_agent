@@ -1,4 +1,4 @@
-- name: "Copy SRC to DEST"
+- name: "Copy {{ appd_agent_path }} to {{ appd_agent_dir }}"
   copy:
   src: "{{ appd_agent_path }}"
   dest: "{{ appd_agent_dir }}"  
