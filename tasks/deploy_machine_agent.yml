@@ -27,7 +27,7 @@
 
 - name: "Create symbolic {{ appd_agent_dir }} -> {{ appd_unzip_dir }}"
   file:
-    src: '{{ appd_unzip_dir }}'
+    src: '{{ appd_agent_dir }}'
     dest: '{{ appd_unzip_dir }}'
     owner: appd 
     group: appd 
