@@ -29,13 +29,13 @@
 # https://docs.ansible.com/ansible/latest/modules/file_module.html
 # http://www.filepermissions.com/file-permissions-index
 
-- name: "Create {{ appd_agent_dir }} if it does not exist"
-  file:
-    path: "{{ appd_agent_dir }}"
-    recurse: yes
-    owner: appd
-    group: appd
-    mode: '0774'
-    state: directory  # directory or file
+#- name: "Create {{ appd_agent_dir }} if it does not exist"
+#  file:
+#    path: "{{ appd_agent_dir }}"
+#    recurse: yes
+#    owner: appd
+#    group: appd
+#    mode: '0774'
+#    state: directory  # directory or file
 # https://docs.ansible.com/ansible/latest/modules/file_module.html
 # http://www.filepermissions.com/file-permissions-index
