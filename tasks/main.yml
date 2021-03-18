@@ -3,5 +3,5 @@
 
 - include_tasks: create_user_and_dir.yml
 - include_tasks: deploy_machine_agent.yml
-- include_tasks: configure_agent.yml
-- include_tasks: configure_service.yml
+#- include_tasks: configure_agent.yml
+#- include_tasks: configure_service.yml
