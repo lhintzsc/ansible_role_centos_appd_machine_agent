@@ -1,10 +1,10 @@
 - name: "Copy {{ appd_agent_path }} to {{ appd_agent_dir }}"
   copy:
-  src: "{{ appd_agent_path }}"
-  dest: "{{ appd_agent_dir }}"  
-  owner: appd
-  group: appd
-  mode: '0644'
+    src: "{{ appd_agent_path }}"
+    dest: "{{ appd_agent_dir }}"  
+    owner: appd
+    group: appd
+    mode: '0644'
 # https://docs.ansible.com/ansible/latest/modules/copy_module.html 
 # https://chmodcommand.com/ 
 
