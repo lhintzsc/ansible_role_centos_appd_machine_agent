@@ -17,7 +17,7 @@
     mode: '0644'
 # https://docs.ansible.com/ansible/latest/modules/copy_module.html 
 # https://chmodcommand.com/ 
-  when: agent_dir.stat.exists
+  when: not agent_dir.stat.exists
 
 - name: "Create {{ appd_unzip_dir }} if it does not exist"
   file:
@@ -29,14 +29,14 @@
     state: directory  # directory or file
 # https://docs.ansible.com/ansible/latest/modules/file_module.html
 # http://www.filepermissions.com/file-permissions-index
-  when: agent_dir.stat.exists
+  when: not agent_dir.stat.exists
 
 - name: "Extract {{ appd_agent_zip }} into {{ appd_unzip_dir }}"
   unarchive:
     src: '{{ appd_agent_zip }}'
     dest: '{{ appd_unzip_dir }}'
 # https://docs.ansible.com/ansible/latest/modules/unarchive_module.html
-  when: agent_dir.stat.exists
+  when: not agent_dir.stat.exists
 
 - name: "Create symbolic {{ appd_agent_dir }} -> {{ appd_unzip_dir }}"
   file:
@@ -47,6 +47,7 @@
     mode: '0774'
     state: link
 # https://docs.ansible.com/ansible/latest/modules/file_module.html
+  when: not agent_dir.stat.exists
 
 - name: "Recursively set owner appd and group appd of dir {{ appd_agent_dir }}"
   file:
@@ -61,3 +62,4 @@
   file:
     state: absent
     path: "{{ appd_home_dir }}/{{ appd_agent_zip }}"
+  when: not agent_dir.stat.exists
