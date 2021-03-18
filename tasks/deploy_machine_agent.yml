@@ -1,7 +1,7 @@
-- name: "Copy {{ appd_agent_path }} to {{ appd_agent_dir }}"
+- name: "Copy {{ appd_agent_path }} to {{ appd_home_dir }}"
   copy:
     src: "{{ appd_agent_path }}"
-    dest: "{{ appd_agent_dir }}"  
+    dest: "{{ appd_home_dir }}"  
     owner: appd
     group: appd
     mode: '0644'
