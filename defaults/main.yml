@@ -14,8 +14,7 @@ appd_analytics_properties: '{{ appd_agent_dir }}/monitors/analytics-agent/conf/a
 
 # service definition
 appd_systemd_service_name: appd-machine-agent.service
-appd_systemd_service_path: /usr/lib/systemd/system
-appd_systemd_service_link: /etc/systemd/system
+appd_systemd_service_path: /etc/systemd/system
 
 # server config /opt/appd/machine_agent/conf/controller-info.xml
 appd_controller_url: "{{ appd_controller_port }}"
