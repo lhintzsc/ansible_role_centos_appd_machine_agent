@@ -4,6 +4,10 @@
   register: agent_dir
 # https://docs.ansible.com/ansible/latest/modules/stat_module.html
 
+- debug:
+    msg: "register {{ agent_dir }}"
+# https://docs.ansible.com/ansible/latest/modules/debug_module.html 
+
 - name: "Copy {{ appd_agent_path }} to {{ appd_home_dir }}"
   copy:
     src: "{{ appd_agent_path }}"
