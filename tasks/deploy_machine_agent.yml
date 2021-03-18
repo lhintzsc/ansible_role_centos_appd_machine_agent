@@ -57,6 +57,7 @@
     owner: appd
     group: appd
     mode: '0774'
+  when: not agent_dir.stat.exists
 
 - name: "Delete zip file {{ appd_agent_zip }}"
   file:
