@@ -47,4 +47,4 @@
 - name: "Delete zip file {{ appd_agent_zip }}"
   file:
     state: absent
-    path: "{{ appd_agent_zip }}"
+    path: "{{ appd_home_dir }}/{{ appd_agent_zip }}"
